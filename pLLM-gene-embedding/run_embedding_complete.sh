@@ -1,4 +1,6 @@
-#function from SATURN https://github.com/snap-stanford/saturn
+#Functions in the SCRIPT_PATH are from SATURN https://github.com/snap-stanford/saturn
+#Function in the ESM_PATH is from EMS2 https://github.com/facebookresearch/esm/tree/main/scripts
+
 #!/bin/bash
 #SBATCH -J Matching
 #SBATCH --nodelist=node3
@@ -12,7 +14,7 @@
 NAME="Sus_scrofa.Sscrofa11.1.pep.all"  # 修改为你想要的参考蛋白质组的名称
 DATA_PATH="/cluster2/home/zeyu/Projects/Program/cross_species_integration/data"             # 数据目录的路径
 SCRIPT_PATH="/cluster2/home/zeyu/Projects/Program/cross_species_integration/SATURN-main/protein_embeddings"     # 脚本目录的路径
-ESM_PATH="/cluster2/home/zeyu/Projects/Program/cross_species_integration/SATURN-main/esm-main/scripts"  # ESM 仓库路径 调用ESM模型脚本
+ESM_PATH="/cluster2/home/zeyu/Projects/Program/cross_species_integration/esm-main/scripts"  # ESM 仓库路径 调用ESM模型脚本
 TORCH_HOME="/cluster2/home/zeyu/Projects/Program/cross_species_integration/Torch_home"  # Torch Home 调用ESM大语言模型
 DEVICE=0  # GPU 编号，根据需要进行修改
 #FASTA_URL="http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/pep/Homo_sapiens.GRCh38.pep.all.fa.gz"  #human(Homo-sapiens)
