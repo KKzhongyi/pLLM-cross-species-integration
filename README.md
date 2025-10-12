@@ -97,7 +97,7 @@ The resulting mappings are then used to unify gene names across species and eval
 - **Description:**  
   Uses **protein language models (ESM2)** to infer cross-species gene mappings via sequence embeddings.
 - **Procedure:**
-  1. Download proteome FASTA files from **Ensembl FTP (release 113)**.
+  1. Download proteome FASTA files from **Ensembl FTP**.
   2. Embed all protein sequences using **ESM2 (esm2_t48_15B_UR50D)** → 5120-dimensional embeddings.
   3. Map protein IDs to gene symbols; average protein embeddings to obtain **gene-level embeddings**.  
      See:  
