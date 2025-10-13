@@ -160,9 +160,9 @@ The integration pipeline consists of **three major stages**:
   ```
   /Cross_species integration workflow/Generate Homologue Table/(Gene homologue mapping strategy)/extract_homologue.ipynb
   ```
-- Example output:
+- Example output(Pic dataset;HL_O2O strategy):
   ```
-  /Cross_species integration workflow/Generate Homologue Table/HL_O2O/crab_eating_macaque_rhesus_macaque_human_mice_pig.csv
+  /Cross_species integration workflow/Generate Homologue Table/HL_O2O/human_mice_pig.csv
   ```
 
 ---
@@ -177,7 +177,7 @@ The integration pipeline consists of **three major stages**:
   ```
 - Example output:
   ```
-  crab_eating_macaque_rhesus_macaque_human_mice_pig.h5
+  human_mice_pig.h5
   ```
 
 ---
@@ -191,19 +191,19 @@ The integration pipeline consists of **three major stages**:
   ```
 - Example outputs:
   ```
-  crab_eating_macaque_rhesus_macaque_human_mice_pig.qs
-  crab_eating_macaque_rhesus_macaque_human_mice_pigprocessed_obj_CCAIntegration.qs
+  human_mice_pig.qs
+  human_mice_pigprocessed_obj_CCAIntegration.qs
   cell_type_cluster_metrics_with_CCAIntegration.txt
   ```
 
 ---
 
-## Example: CAA Dataset Integration
-
-Using the **Caa (Cell Atlas of Aqueous Humor)** dataset as an example:
+## Example: Pic Dataset Integration
+Raw data and processed data have been uploaded in 
+Using the **Pic (Pancreatic islet cells)** dataset as an example:
 
 1. Generate `Homologue Table` →  
-   `/Generate Homologue Table/HL_O2O/crab_eating_macaque_rhesus_macaque_human_mice_pig.csv`
+   `/Generate Homologue Table/HL_O2O/human_mice_pig.csv`
 2. Integrate dataset →  
    `/Scripts/extract.py` produces `.h5` integrated file
 3. Evaluate and visualize →  
