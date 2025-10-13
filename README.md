@@ -169,7 +169,7 @@ The integration pipeline consists of **three major stages**:
 
 ### Step 2: Perform Cross-Species Integration
 
-- Use the generated dataset-level Homologue Table as input.
+- Use the generated dataset-level Homologue Table and the raw expression matrix of all species(e.g. human_filtered.h5, mice_filtered.h5 ,pig_filtered.h5) as input.
 - Run integration using:
   ```
   /Cross_species integration workflow/Scripts/run_UMAP.sh
@@ -199,7 +199,8 @@ The integration pipeline consists of **three major stages**:
 ---
 
 ## Example: Pic Dataset Integration
-Raw data and processed data have been uploaded in 
+Raw data and processed integration data have been uploaded to [Zenodo](https://zenodo.org/records/17341653).
+
 Using the **Pic (Pancreatic islet cells)** dataset as an example:
 
 1. Generate `Homologue Table` →  
