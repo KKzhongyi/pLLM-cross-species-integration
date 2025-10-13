@@ -57,7 +57,7 @@ print(homologue_table.iloc[-5:, -5:])
 
 #读取单个数据集
 def load_dataset(dataset: str, species: str) -> pd.DataFrame:
-    file_path = f"/cluster2/home/zeyu/Projects/Program/cross_species_integration/data/datasets/{dataset.strip()}/raw_data/{species}_df.h5"
+    file_path = f"/cluster2/home/zeyu/Projects/Program/cross_species_integration/data/datasets/{dataset.strip()}/raw_data/{species}_filtered.h5"
 
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"文件不存在: {file_path}")
