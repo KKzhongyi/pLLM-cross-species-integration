@@ -99,22 +99,28 @@ The resulting mappings are then used to unify gene names across species and eval
 - **Procedure:**
   1. Download proteome FASTA files from **Ensembl FTP**.
   2. Embed all protein sequences using **ESM2 (esm2_t48_15B_UR50D)** → 5120-dimensional embeddings.
-  3. Map protein IDs to gene symbols; average protein embeddings to obtain **gene-level embeddings**.  
+  3. Map protein IDs to gene symbols and convert protein-level embeddings to **gene-level embeddings**. The default `aggregate` method averages all available isoform embeddings, reproducing the original LM_O2O workflow. Two additional reviewer-requested options are also provided: `max_pooling` performs element-wise max pooling across isoform embeddings, and `canonical_isoform` uses one selected canonical protein isoform per gene.  
      See:  
      ```
      /Gene homologue mapping strategies/LM_O2O/pLLM_gene_embedding/run_embedding_complete.sh
      ```
-  4. Compute **cross-species correlation matrix** between gene embeddings.
+  4. Compute **cross-species correlation matrix** between gene embeddings. The method-aware wrapper can resolve `aggregate`, `max_pooling`, or `canonical_isoform` embedding outputs automatically.
   5. Identify **double best-hit (DBH)** pairs (highest mutual correlation).
   6. Apply greedy one-to-one selection by descending correlation.
 - **Key Scripts:**
   ```
+  /Gene homologue mapping strategies/LM_O2O/pLLM_gene_embedding/run_embedding_complete.sh
+  /Gene homologue mapping strategies/LM_O2O/pLLM_gene_embedding/convert_protein_embeddings_to_gene_embeddings.py
+  /Gene homologue mapping strategies/LM_O2O/pLLM_gene_embedding/canonical_isoform/select_canonical_isoforms.py
+  /Gene homologue mapping strategies/LM_O2O/pLLM_gene_embedding/canonical_isoform/build_canonical_fasta_from_mapping.py
   /Gene homologue mapping strategies/LM_O2O/LM_O2O gene homologue mapping/run_LM_O2O_Matching_2species.sh
   /Gene homologue mapping strategies/LM_O2O/LM_O2O gene homologue mapping/generatehomologue_forallspecies_LM_O2O.ipynb
   ```
 - **Output Directory:**  
   ```
-  /Gene homologue mapping strategies/LM_O2O/o2oResults/
+  /Gene homologue mapping strategies/LM_O2O/pLLM_gene_embedding/Results/
+  /Gene homologue mapping strategies/LM_O2O/Species_mapping/Results/
+  /Gene homologue mapping strategies/LM_O2O/ONNResults/
   ```
 
 ---
